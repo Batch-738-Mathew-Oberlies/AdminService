@@ -1,4 +1,4 @@
-package com.revature.rideshare.adminservice.controller;
+package com.revature.rideshare.adminservice.controllers;
 
 import com.revature.rideshare.adminservice.models.Admin;
 import com.revature.rideshare.adminservice.models.AdminDTO;
