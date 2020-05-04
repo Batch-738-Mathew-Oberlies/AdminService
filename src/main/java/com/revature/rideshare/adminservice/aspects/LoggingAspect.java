@@ -49,10 +49,10 @@ public class LoggingAspect {
 		String payload = "";
 		if (jp.getTarget().toString().matches(".*Login.*")) sensitive = true;
 		String parameters = buildRequestParameterSetring();
-		//Log all requests
+		// Log all requests
 		String requestMessage = String.format("IP: %s made a %s request with parameters %s to %s at %s", request.getRemoteAddr(), request.getMethod(), parameters, request.getRequestURI(), new Date());
 		loggerService.getAccess().trace(requestMessage);
-		//Log payload on non-sensitive requests
+		// Log payload on non-sensitive requests
 		if (!sensitive) {
 			payload = getPayload();
 			String body = String.format("%s invoked %s with parameters %s and payload %s", jp.getTarget(), jp.getSignature(), parameters, payload);
@@ -60,14 +60,14 @@ public class LoggingAspect {
 		}
 		try {
 			result = jp.proceed();
-			//Log Exceptions if anything goes wrong
+			// Log Exceptions if anything goes wrong
 		} catch (Throwable e) {
 			String controlLog = jp.getTarget() + " invoked " + jp.getSignature() + " throwing: " + e;
 			loggerService.getException().warn(controlLog, e);
 			response.setStatus(500);
 			throw e;
 		} finally {
-			//Log Response
+			// Log Response
 			if (!sensitive) {
 				String body = "";
 				int status = response.getStatus();

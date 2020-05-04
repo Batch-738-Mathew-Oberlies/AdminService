@@ -18,7 +18,6 @@ import java.util.Optional;
 
 @Service
 public class AdminServiceImpl implements AdminService {
-
 	@Autowired
 	private AdminRepository adminRepository;
 
@@ -76,5 +75,4 @@ public class AdminServiceImpl implements AdminService {
 		adminRepository.deleteById(id);
 		return "Admin with id: " + id + " was deleted.";
 	}
-
 }

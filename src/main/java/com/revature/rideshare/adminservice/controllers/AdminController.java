@@ -27,7 +27,6 @@ import java.util.Optional;
 @CrossOrigin
 @Api(tags = {"Admin"})
 public class AdminController {
-
 	@Autowired
 	private AdminService adminService;
 
@@ -39,7 +38,6 @@ public class AdminController {
 	@ApiOperation(value = "Returns all admins", tags = {"Admin"})
 	@GetMapping
 	public List<Admin> getAdmins() {
-
 		return adminService.getAdmins();
 	}
 
@@ -92,7 +90,6 @@ public class AdminController {
 	@ApiOperation(value = "Deletes an admin by id", tags = {"Admin"})
 	@DeleteMapping("/{id}")
 	public String deleteAdmin(@PathVariable("id") int id) {
-
 		return adminService.deleteAdminById(id);
 	}
 }
