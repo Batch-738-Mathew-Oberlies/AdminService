@@ -35,5 +35,4 @@ public class CachedBodyServletInputStream extends ServletInputStream {
 	public void setReadListener(ReadListener readListener) {
 		throw new UnsupportedOperationException();
 	}
-
 }

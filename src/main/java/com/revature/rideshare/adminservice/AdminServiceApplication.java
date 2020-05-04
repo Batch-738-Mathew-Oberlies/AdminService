@@ -11,9 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableAspectJAutoProxy
 @ServletComponentScan
 public class AdminServiceApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(AdminServiceApplication.class, args);
 	}
-
 }
