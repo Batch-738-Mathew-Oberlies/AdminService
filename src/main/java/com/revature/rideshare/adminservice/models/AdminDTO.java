@@ -1,5 +1,6 @@
 package com.revature.rideshare.adminservice.models;
 
+import com.revature.rideshare.adminservice.exceptions.IllegalNullArgumentException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,9 +20,10 @@ public class AdminDTO {
 
 	public AdminDTO(Admin admin) {
 		super();
-		if (admin != null) {
-			this.adminId = admin.getAdminId();
-			this.userName = admin.getUserName();
+		if (admin == null) {
+			throw new IllegalNullArgumentException("The AdminDTO requires an admin object to construct");
 		}
+		this.adminId = admin.getAdminId();
+		this.userName = admin.getUserName();
 	}
 }

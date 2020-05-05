@@ -7,12 +7,19 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * Admin class that represents the admins. All admins have an id and a username.
+ *
+ * @author Adonis Cabreja
+ */
+
 @Component
 @Entity
 @Table(name = "admins")
 @Data
 @NoArgsConstructor
 public class Admin implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
